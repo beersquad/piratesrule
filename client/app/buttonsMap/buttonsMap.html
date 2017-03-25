@@ -1,0 +1,11 @@
+<div class="container">
+  <!--web site title layout-->
+  <h1 >Buttons Map</h1>
+  <table>
+    <tr ng-repeat="row in map">
+      <td ng-repeat="cell in row track by $index">
+         {{cell}}
+      </td>
+    </tr>
+  </table>
+</div>

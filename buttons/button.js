@@ -13,10 +13,10 @@ board.on("ready", () => {
     console.log("down");
     date = new Date();
     axios.post('/button', {
-      shelfNumber: 3;
-      date: date;
-      down: true;
-      up: false;
+      shelfNumber: 3,
+      date: date,
+      down: true,
+      up: false,
     }).then((response) => {
       console.log(response);
     }).catch((error) => {
@@ -28,10 +28,10 @@ board.on("ready", () => {
     console.log("up")
     console.log(new Date());
     axios.post('/button', {
-      shelfNumber: 3;
-      date: date;
-      down: false;
-      up: true;
+      shelfNumber: 3,
+      date: date,
+      down: false,
+      up: true,
     }).then((response) => {
       console.log(response);
     }).catch((error) => {

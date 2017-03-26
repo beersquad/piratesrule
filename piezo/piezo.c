@@ -17,6 +17,7 @@ long interval = 250000; // READING INTERVAL
 // int t = 0; // TEMPERATURE VAR
 // int h = 0; // HUMIDITY VAR
 // String data;
+int reading = 0; // AC VAR
 
 void setup() {
 Serial.begin(9600);
@@ -51,34 +52,28 @@ void loop(){
 
 
   currentMillis = millis();
-if(currentMillis - previousMillis > interval) { // READ ONLY ONCE PER INTERVAL
-previousMillis = currentMillis;
-h = (int) dht.readHumidity();
-t = (int) dht.readTemperature();
-}
+  if(currentMillis - previousMillis > interval) { // READ ONLY ONCE PER INTERVAL
+  previousMillis = currentMillis;
+  reading = piezoADC / 1023.0 * 5.0;
+  }
 
-data = "temp1=";
+  data = "piezoV=";
 
-data.concat(t);
+  data.concat(reading);
 
-data.concat("&hum1=");
-
-data.concat(h);
-
-
-if (client.connect("www.xxxxxx.com",80)) { // REPLACE WITH YOUR SERVER ADDRESS
-client.println("POST /add.php HTTP/1.1");
-client.println("Host: xxxxxx.com"); // SERVER ADDRESS HERE TOO
-client.println("Content-Type: application/x-www-form-urlencoded");
-client.print("Content-Length: ");
-client.println(data.length());
-client.println();
-client.print(data);
+if (client.connect("www.xxxxxx.com",8000)) { // REPLACE WITH YOUR SERVER ADDRESS
+  client.println("POST /add.php HTTP/1.1");
+  client.println("Host: xxxxxx.com"); // SERVER ADDRESS HERE TOO
+  client.println("Content-Type: application/x-www-form-urlencoded");
+  client.print("Content-Length: ");
+  client.println(data.length());
+  client.println();
+  client.print(data);
 }
 
 if (client.connected()) {
-client.stop(); // DISCONNECT FROM THE SERVER
+  client.stop(); // DISCONNECT FROM THE SERVER
 }
 
-delay(300000); // WAIT FIVE MINUTES BEFORE SENDING AGAIN
+// delay(300000); // WAIT FIVE MINUTES BEFORE SENDING AGAIN
 }

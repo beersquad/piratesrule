@@ -1,0 +1,41 @@
+.container{
+  text-align: center;
+}
+table{
+  margin: 0 auto;
+}
+td {
+    border: solid 2px lightgrey;
+    width: 40px;
+    height: 40px;
+}
+.red {
+    background-color: red;
+}
+.black {
+    background-color: black;
+}
+.black_square {
+ color: black;
+}
+
+.red_square {
+  color: red;
+}
+
+.go_Rate_btn{
+  margin-top: 40px;
+}
+
+.fullscreen_bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-attachment: fixed;
+  background-size: 1000px 1000px;
+  background-position: -80px -40px;
+  background-image: url('https://rks-inside-prod.s3-us-west-1.amazonaws.com/lists/avatars/000/000/047/original_o-PINT-GLASS-BEER-facebook.jpg?1473216955');
+  background-repeat: no-repeat;
+}

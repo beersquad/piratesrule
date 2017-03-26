@@ -5,7 +5,7 @@ const board = new five.Board();
 board.on("ready", function() {
 
   var motion = new five.Motion(7);
-  var led = new five.Led(13);
+  var leds = new five.Leds([3, 5, 6]);
 
   motion.on("calibrated", function() {
     console.log("calibrated");
@@ -13,11 +13,11 @@ board.on("ready", function() {
 
   motion.on("motionstart", function() {
     console.log("motionstart");
-    led.on();
+    leds.pulse();
   });
 
   motion.on("motionend", function() {
     console.log("motionend");
-    led.off();
+    leds.stop();
   });
 });

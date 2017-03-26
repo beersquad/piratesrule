@@ -1,9 +1,13 @@
 angular.module('CBSApp.services', [])
 
 .factory('Map', function(){
+  var data = [['1','1','0','0','1','1','1','1'],
+              ['1','1','0','0','1','1','1','1'],
+              ['1','1','1','1','0','0','0','0'],
+              ['1','1','1','1','1','1','1','1']
+            ]
+
   var getMap = function(){
-    var data = [[0,0,0],
-                [0,1,0]]
     return data
   }
 

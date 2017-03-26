@@ -1,5 +1,23 @@
+.container{
+  text-align: center;
+}
+table{
+  margin: 0 auto;
+}
 td {
     border: solid 2px lightgrey;
     width: 40px;
     height: 40px;
+}
+.red {
+    background-color: red;
+}
+.black {
+    background-color: black;
+}
+.black_square {
+ color: black;
+}
+.red_square {
+  color: red;
 }

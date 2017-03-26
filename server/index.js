@@ -12,11 +12,6 @@ app.use(morgan('dev'))
 app.use(cors())
 const port = process.env.PORT || 8000
 routes(app, express)
-
-app.post('/button', (req, response) => {
-  console.log('response::', req.body);
-})
-
 app.use(express.static(path.join(__dirname, '/../client')))
 app.listen(port, () => {
   console.log("Listening on port: ", port)

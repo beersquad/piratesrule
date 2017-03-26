@@ -1,10 +1,13 @@
 module.exports = {
-    button: function(req, res) {
-        if (req.body.down) {
-            console.log('its down')
-        }
-        if(req.body.up) {
-            console.log('its up, oh lala ')
-        }
+  button: function (req, res) {
+    if (req.body.down) {
+      console.log('its down')
     }
+    if (req.body.up) {
+      console.log('its up, oh lala ')
+    }
+  },
+  viberate: function (req, res) {
+    console.log(req.body)
+  }
 }

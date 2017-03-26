@@ -6,9 +6,12 @@
     <p>Filled spot: <span class=red_square>&#9724</span></p>
     <tr ng-repeat="row in map">
       <td ng-repeat="cell in row track by $index"
-        ng-class="{red: cell === '1',
-        black: cell === '0'}">
+        ng-class="{red: cell === 1,
+        black: cell === 0}">
       </td>
     </tr>
   </table>
+  <div ng-switch="showMe">
+    <div ng-switch-when="true">Fill The Frige!!!</div>
+  </div>
 </div>

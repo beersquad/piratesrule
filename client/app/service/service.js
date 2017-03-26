@@ -2,33 +2,22 @@ angular.module('CBSApp.services', [])
 
 
 .factory('Map', function($http,$q){
-  var data = [[1,1,1,1,1,1,1,1],
-              [1,1,1,1,1,1,1,1],
-              [1,1,1,1,1,1,0,0],
-              [1,1,1,1,1,0,1,1]
-            ]
 
-.factory('Map', function(){
-  var data = [['1','1','0','0','1','1','1','1'],
-              ['1','1','0','0','1','1','1','1'],
-              ['1','1','1','1','0','0','0','0'],
-              ['1','1','1','1','1','1','1','1']
-
-            ]
 
   var getMap = function(){
-    return data
+    return $http({
+      method: 'GET',
+      url: '/api/map'
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
   }
 
-  var getRate = function(){
-    /////backend
-    /////check the button matrix data when first vibration move(open door),
-    /////check the button matrix data when second vibration move(close door)
-    /////front end just request and get the rate
-  }
+
 
   return {
-    getMap: getMap,
+    getMap: getMap
   }
 })
 

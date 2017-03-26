@@ -21,7 +21,6 @@
     "body-parser": "^1.17.1",
     "cors": "^2.8.1",
     "axios": "0.15.3",
-    "angular": "^1.6.3",
     "express": "^4.15.2",
     "knex": "^0.12.9",
     "mongoose": "^4.9.1",

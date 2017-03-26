@@ -15,6 +15,7 @@ module.exports = {
 
     findButton({buttonNumber: buttonNumber})
     .then(function(button) {
+      console.log(button);
       if(!button.buttonNumber.includes(buttonNumber) {
         return createButton({
           buttonNumber: buttonNumber,

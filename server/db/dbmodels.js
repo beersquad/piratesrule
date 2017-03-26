@@ -1,8 +1,8 @@
 var db = require('./mongodb.js');
 var mongoose = require('mongoose');
 
-
-var butttonSchema = new mongoose.Schema({
+console.log('here')
+var butttonSchema = new db.Schema({
   buttonNumber: Number,
   shelfNumber: Number,
   date: String,

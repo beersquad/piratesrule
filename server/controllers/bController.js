@@ -1,23 +1,30 @@
+var Q = require('q');
+var db = require('../db/dbmodels.js')
+
+var findButton = Q.nbind(db.findOne, db);
+var createButton = Q.nbind(db.create, db);
+
+
 module.exports = {
   button: function (req, res) {
 
-      var buttonNumber = req.buttonNumber;
-      var shelfNumber = req.shelfNumber;
-      var date = req.date;
-      var down = req.down;
-      var up = req.up;
+      var buttonNumber = req.body.buttonNumber;
+      var shelfNumber = req.body.shelfNumber;
+      var date = req.body.date;
+      var down = req.body.down;
+      var up = req.body.up;
 
       findButton({buttonNumber: buttonNumber})
-      .then(function(button) {
-        if(!button.buttonNumber.includes(buttonNumber) {
-          return createButton({
+      .then((button) => {
+        if(!button) {
+          createButton({
             buttonNumber: buttonNumber,
             shelfNumber: shelfNumber,
             date: date,
             down: down,
             up: up
           })
-        }) else {
+        } else {
           button.buttonNumber = buttonNumber;
           button.shelfNumber = shelfNumber;
           button.date = date;

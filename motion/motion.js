@@ -12,12 +12,10 @@ board.on("ready", function() {
   });
 
   motion.on("motionstart", function() {
-    console.log("motionstart");
     leds.pulse();
   });
 
   motion.on("motionend", function() {
-    console.log("motionend");
     leds.stop();
   });
 });

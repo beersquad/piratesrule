@@ -4,5 +4,13 @@ angular.module('CBSApp.map',[])
 
     $interval(function(){
       $scope.map = Map.getMap()
+      $scope.showMe = false
+      var filledSpot = $scope.map.reduce(function(a,b) {
+        return a.concat(b)})
+        .reduce(function(a,b) {
+          return a + b });
+      if($scope.map.length * $scope.map[0].length - filledSpot >= 2){
+        $scope.showMe = true
+      }
   },300)
 })

@@ -17,9 +17,6 @@ app.post('/button', (req, response) => {
   console.log('response::', req.body);
 })
 
-
-
->>>>>>> motion
 app.use(express.static(path.join(__dirname, '/../client')))
 app.listen(port, () => {
   console.log("Listening on port: ", port)
